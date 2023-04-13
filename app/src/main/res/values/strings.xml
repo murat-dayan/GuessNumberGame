@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GuessNumberGame</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="guessNumberText">Guess a number
+        between 1 and 100</string>
+    <string name="guessNumber">Guess Number</string>
+    <string name="startGame">Start Game</string>
+    <string name="remainingRight">Remaining Right: 5</string>
+    <string name="enterNumberHint">Please Enter Number</string>
+    <string name="winText">You Win :)</string>
+    <string name="playAgain">Play Again</string>
+    <string name="loseText">You Lose:(</string>
+    <string name="lowClue">Your Number is Low</string>
+    <string name="highClue">Your Number is High</string>
+</resources>
