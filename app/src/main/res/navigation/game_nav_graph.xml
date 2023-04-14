@@ -7,7 +7,8 @@
     <fragment
         android:id="@+id/homeScreenFragment"
         android:name="com.example.guessnumbergame.HomeScreenFragment"
-        android:label="HomeScreenFragment" >
+        android:label="HomeScreenFragment"
+        tools:layout="@layout/fragment_home_screen">
         <action
             android:id="@+id/action_homeScreenFragment_to_gameScreenFragment"
             app:destination="@id/gameScreenFragment" />
@@ -15,7 +16,8 @@
     <fragment
         android:id="@+id/gameScreenFragment"
         android:name="com.example.guessnumbergame.GameScreenFragment"
-        android:label="GameScreenFragment" >
+        android:label="GameScreenFragment"
+        tools:layout="@layout/fragment_game_screen">
         <action
             android:id="@+id/action_gameScreenFragment_to_resultFragment"
             app:destination="@id/resultFragment"
@@ -29,13 +31,16 @@
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.guessnumbergame.ResultFragment"
-        android:label="ResultFragment" >
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
         <argument
             android:name="isWin"
             app:argType="boolean"
             android:defaultValue="true" />
         <action
             android:id="@+id/action_resultFragment_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" />
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

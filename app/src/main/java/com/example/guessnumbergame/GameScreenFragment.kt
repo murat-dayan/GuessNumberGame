@@ -22,12 +22,16 @@ class GameScreenFragment : Fragment() {
         var remainingRight: Int= 5
 
         binding.buttonGuess.setOnClickListener {
-            remainingRight -= 1
 
-            binding.textViewGuessRight.text = "Remaining Right: $remainingRight"
+
+
+
+
 
             val guessedNumberString = binding.editTextNumber.text.toString()
             if (!guessedNumberString.isNullOrEmpty()) {
+                remainingRight -= 1
+                binding.textViewGuessRight.text = "Remaining Right: $remainingRight"
                 try {
                     val guessedNumber = guessedNumberString.toInt()
 
@@ -46,11 +50,16 @@ class GameScreenFragment : Fragment() {
                 } catch (e: Exception) {
                     Toast.makeText(context, e.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
+            }else{
+                Toast.makeText(requireActivity(), "Please Enter the Number", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
             if (remainingRight == 0) {
                 val switch = GameScreenFragmentDirections.actionGameScreenFragmentToResultFragment(false)
                 Navigation.findNavController(requireView()).navigate(switch)
             }
+
+            binding.editTextNumber.setText("")
 
         }
 
